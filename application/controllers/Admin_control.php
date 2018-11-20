@@ -24,4 +24,21 @@ class Admin_control extends CI_Controller {
 		$this->load->view('admin/kategori', $data);
 		$this->load->view('resource/footer');	
 	}
+
+	public function produk() {
+		$this->load->view('resource/basic');
+		$this->load->view('resource/header');
+		$this->load->view('resource/admin');
+		$this->load->view('admin/produk');
+		$this->load->view('resource/footer');	
+	}
+
+	public function sparepart() {
+		$this->load->view('resource/basic');
+		$this->load->view('resource/header');
+		$this->load->view('resource/admin');
+		$this->load->view('admin/sparepart');
+		$this->load->view('resource/footer');	
+	}
 }
+
