@@ -12,13 +12,13 @@
  					<a class="nav-link" href="<?php echo site_url($session['akses'].'/kategori/'); ?>">Kategori</a>
  				</li>
  				<li class="nav-item">
- 					<a class="nav-link" href="#">Produk</a>
+ 					<a class="nav-link" href="<?php echo site_url($session['akses'].'/produk/'); ?>">Produk</a>
  				</li>
  				<li class="nav-item">
- 					<a class="nav-link" href="#">Sparepart</a>
+ 					<a class="nav-link" href="<?php echo site_url($session['akses'].'/sparepart/'); ?>">Sparepart</a>
  				</li>
  				<li class="nav-item">
- 					<a class="nav-link" href="#">Service</a>
+ 					<a class="nav-link" href="#">Service</a>	
  				</li>
  				<li class="nav-item">
  					<a class="nav-link" href="#">Kontak</a>
