@@ -42,24 +42,29 @@
 	<section class="catalogue" id="produk">
 		<div class="container">
 			<div class="row">
-				<div class="col-12">
-				<?php foreach ($kategori as $c) : ?>
-					<div class="row">
-						<div class="card col-md-6 col-lg-4">
-							<div class="row">
-								<div class="col-5">
-									<?php $link_img = base_url('file/produk/'.$c['nama_kategori'].'/'.$c['gambar_kategori']); ?>
-									<img class="card-img img-fluid p-3" src="<?php echo $link_img;?>">
+			
+			<?php foreach ($kategori as $c) : ?>
+				<div class="col-md-6 col-lg-4">
+					<div class="card">
+						<div class="row">
+							<div class=" col">
+								<?php $link_img = base_url('file/produk/'.$c['nama_kategori'].'/'.$c['gambar_kategori']); ?>
+								<img class="card-thumb img-fluid p-3" src="<?php echo $link_img;?>">
+							</div>
+							<div class="col">
+								<div class="card-body py-1 px-3 text-right">
+									<a href="#" class="link"><h4 class="display-5"><?php echo $c['nama_kategori'];?></h4></a>
 								</div>
-								<div class="col-7">
-									<div class="card-body">
-									<a href="#" class="link"><h4 class="display-5">MVP</h4></a>
+								
+								<div class="btn-group py-1 px-3 float-right" role="group">
+									<button type="button" class="btn btn-primary">Edit</button>
+									<button type="button" class="btn btn-danger">Hapus</button>
 								</div>
 							</div>
 						</div>
 					</div>
-				<?php endforeach; ?>
 				</div>
+			<?php endforeach; ?>
 			</div>
 		</div>
 	</section>

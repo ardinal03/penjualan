@@ -198,3 +198,10 @@ a:hover {
 	background-color: #fff;
 	border-radius: 10px;
 }
+
+.card-thumb {
+	height: 100px;
+	width: auto;
+	object-fit: scale-down;
+	object-position: center;
+}
