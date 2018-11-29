@@ -33,4 +33,25 @@ class Access {
 		$this->ac->session->unset_userdata('akses');
 		$this->ac->session->sess_destroy();
 	}
+
+	public function pages_admin($pages, $data = NULL) {
+		$this->ac->load->view('resource/basic');
+		$this->ac->load->view('resource/header');
+		$this->ac->load->view('resource/admin');
+		$this->ac->load->view($pages, $data);
+		$this->ac->load->view('resource/footer');
+	}
+
+	public function pages_normal($pages, $data = NULL) {
+		$this->ac->load->view('resource/basic');
+		$this->ac->load->view('resource/header');
+		$this->ac->load->view($pages, $data);
+		$this->ac->load->view('resource/footer');
+	}
+
+	public function pages_warning($pages, $data = NULL) {
+		$this->ac->load->view('resource/basic');
+		$this->ac->load->view($pages, $data);
+		$this->ac->load->view('resource/footer');
+	}
 }

@@ -12,7 +12,7 @@ class Action_model extends CI_Model {
 		$this->db->where('username', $user);
 		$this->db->where('password', $pass);
 
-		$query 	= $this->db->get('user');
+		$query 	= $this->db->get('kontak');
 		$row 	= $query->num_rows();
 		
 		if ($row > 0) {

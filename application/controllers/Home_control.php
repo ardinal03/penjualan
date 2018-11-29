@@ -8,15 +8,14 @@ class Home_control extends CI_Controller {
 	}
 
 	public function index() {
-		$this->load->view('resource/basic');
-		$this->load->view('resource/header');
-		$this->load->view('welcome_message');
-		$this->load->view('resource/footer');
+		$data['kategori'] 	= $this->crud_model->_all_kategori();
+
+		$this->access->pages_normal('home', $data);
 	}
 
 	public function login() {
 		$this->load->view('resource/basic');
-		$this->load->view('login');
+		$this->load->view('pages/login');
 		$this->load->view('resource/footer');
 	}
 
@@ -24,7 +23,7 @@ class Home_control extends CI_Controller {
 		$username	= $this->input->post('username', true);
 		$password	= $this->input->post('password', true);
 
-		$login 	= $this->action_model->check_login($username, $password);
+		$login 		= $this->action_model->check_login($username, $password);
 
 		if (! empty($login)) {
 			$this->access->start_session($login);
