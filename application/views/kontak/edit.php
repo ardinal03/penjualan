@@ -7,7 +7,7 @@
 	$kn_telp 		= $kontak['no_telp'];
 	$kn_email		= $kontak['email'];
 	$kn_akses 		= $kontak['akses'];
-	$kn_ket			= $kontak['keterangan'];
+	$kn_jabatan		= $kontak['jabatan'];
 	$kn_tanggal		= $kontak['ditambahkan'];
 ?>
 
@@ -63,7 +63,7 @@
 						</div>
 						<div class="card-section d-flex">
 							<p class="col card-subtitle">Keterangan</p>
-							<p class="col card-subtitle"><?php echo $kn_ket; ?></p>
+							<p class="col card-subtitle"><?php echo $kn_jabatan; ?></p>
 						</div>
 						<div class="card-section d-flex no-border">
 							<p class="col card-subtitle">Ditambahkan Pada</p>
@@ -110,11 +110,11 @@
 									</div>
 									<div class="form-group">
 										<label for="email" class="col-form-label">E-mail</label>
-										<input type="text" name="email" class="form-control" required value="<?php echo $kn_email;?>">
+										<input type="email" name="email" class="form-control" required value="<?php echo $kn_email;?>">
 									</div>
 									<div class="form-group">
-										<label for="keterangan" class="col-form-label">Keterangan</label>
-										<textarea cols="54" rows="3" name="keterangan" class="form-control"><?php echo $kn_ket;?></textarea>
+										<label for="jabatan" class="col-form-label">Keterangan</label>
+										<input type="text" name="jabatan" class="form-control" required value="<?php echo $kn_jabatan;?>">
 									</div>
 									<hr>
 									<div class="text-center">

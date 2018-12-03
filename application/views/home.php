@@ -28,7 +28,7 @@
 								
 									<div class="col">
 										<div class="full-wrap">
-											<a href="#" class="link display-5 m-auto"><?php echo $c['nama_kategori'];?></a>
+											<a href="<?php echo site_url('kategori/'.$c['nama_kategori']);?>" class="link display-5 m-auto"><?php echo $c['nama_kategori'];?></a>
 										</div>
 									</div>
 								</div>

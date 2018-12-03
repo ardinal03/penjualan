@@ -237,4 +237,55 @@ class Crud_model extends CI_Model {
 		$query = $this->db->get('bengkel');
 		return $this->_row_array($query);	
 	}
+/**
+|--------------------------------------------------------
+|	Pesan
+|	Semua Data Pesan
+|--------------------------------------------------------
+ */
+	public function _all_pesan() {
+		$this->db->select('*');
+		$this->db->order_by('ditambahkan', 'DESC');
+
+		$query 	= $this->db->get('pesan');
+		return $this->_result_array($query);
+	}
+/**
+|--------------------------------------------------------
+|	Pilih Satu Data Service
+|--------------------------------------------------------
+ */
+	public function _select_pesan($index) {
+		$this->db->select('*');
+		$this->db->where($index);
+
+		$query = $this->db->get('pesan');
+		return $this->_row_array($query);	
+	}
+/**
+|--------------------------------------------------------
+|	Ulasan
+|	Semua Data Pesan
+|--------------------------------------------------------
+ */
+	public function _all_ulasan() {
+		$this->db->select('*');
+		$this->db->join('kontak', 'kontak.id_kontak = ulasan.id_kontak', 'LEFT');
+		$this->db->order_by('ulasan.ditambahkan', 'DESC');
+
+		$query 	= $this->db->get('ulasan');
+		return $this->_result_array($query);
+	}
+/**
+|--------------------------------------------------------
+|	Pilih Satu Data Service
+|--------------------------------------------------------
+ */
+	public function _select_ulasan($index) {
+		$this->db->select('*');
+		$this->db->where($index);
+
+		$query = $this->db->get('ulasan');
+		return $this->_row_array($query);	
+	}
 }

@@ -51,7 +51,7 @@ class Kontak_control extends CI_Controller {
 			'no_telp'		=> $this->input->post('no_telp', TRUE),
 			'email'			=> $this->input->post('email', TRUE),
 			'akses'			=> $this->input->post('akses', TRUE),
-			'keterangan'	=> $this->input->post('keterangan', TRUE),
+			'jabatan'		=> $this->input->post('jabatan', TRUE),
 			'ditambahkan'	=> date('Y-m-d H:i:s')
 		);
 		

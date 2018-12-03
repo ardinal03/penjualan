@@ -1,0 +1,352 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 03, 2018 at 06:56 PM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `penjualan`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bengkel`
+--
+
+CREATE TABLE `bengkel` (
+  `kode_bengkel` varchar(8) NOT NULL,
+  `nama_bengkel` text NOT NULL,
+  `alamat` text NOT NULL,
+  `no_telp` varchar(15) NOT NULL,
+  `ditambahkan` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bengkel`
+--
+
+INSERT INTO `bengkel` (`kode_bengkel`, `nama_bengkel`, `alamat`, `no_telp`, `ditambahkan`) VALUES
+('5eq0MtGO', 'Wijaya Toyota Dago', 'Jl. Ir. H. Juanda No. 131, Dago, Lb. Siliwangi, Coblong, Kota Bandung, Jawa Barat 40132', '(022) 2500010', '2018-11-28 18:37:06'),
+('FLvTWoIT', 'Tunas Toyota Gatot Subroto', 'Jl. Raya Gatot Subroto No. 357', '(022) 7312994', '2018-11-25 12:50:21'),
+('smFvZNfg', 'Auto 2000 Pasteur', ' Jl. Dr. Djunjunan No.192, Sukagalih, Sukajadi, Kota Bandung, Jawa Barat 40163', '(022) 2000100', '2018-11-25 12:25:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `file`
+--
+
+CREATE TABLE `file` (
+  `kode_file` varchar(8) NOT NULL,
+  `referensi` text NOT NULL,
+  `nama_file` text NOT NULL,
+  `link_file` blob NOT NULL,
+  `ditambahkan` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `file`
+--
+
+INSERT INTO `file` (`kode_file`, `referensi`, `nama_file`, `link_file`, `ditambahkan`) VALUES
+('2OyW4Z08', 'Ja5hMpHx', 'pPwjpWzaajxVXrG8.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f546f796f74612038362f7050776a70577a61616a7856587247382e706e67, '2018-11-27 12:33:05'),
+('2qdlHz8H', 'WTLCKPyC', 'zOW6kG0jnXmiGHsg.jpg', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7370617265706172742f546f796f746120536f6c756e6120e2809320465220537570706f727420417373792f7a4f57366b47306a6e586d69474873672e6a7067, '2018-11-26 13:31:03'),
+('4SZVtbZi', 'BQJxY0WW', 't4cgyXStPvamXWfJ.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f6b617465676f72692f5355562f74346367795853745076616d5857664a2e706e67, '2018-11-27 12:03:40'),
+('64WdIWs1', 'H8H7tWvc', 'XvC5M52OOcNyQIFS.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f416c6c204e657720566f78792f587643354d35324f4f634e79514946532e706e67, '2018-11-27 12:38:26'),
+('6D8vAdyq', 'WTLCKPyC', 'G7OtdizWeu7LR2X9.jpg', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7370617265706172742f546f796f746120536f6c756e6120e2809320465220537570706f727420417373792f47374f7464697a576575374c523258392e6a7067, '2018-11-26 13:31:03'),
+('6JSOQUAO', 'pzG9hZmE', 'Gj8626rAFlv3OcZe.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f48696c75782044204361622f476a383632367241466c76334f635a652e706e67, '2018-11-27 12:43:45'),
+('7NRZfF1o', 'IvUYcRHM', 'SappNAzSxU884pM0.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f4e65772043616d72792f536170704e417a537855383834704d302e706e67, '2018-11-27 15:24:07'),
+('8TMaXNAJ', 'HG6mKE1w', 'gAhA8ul144bpJI0x.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f6b617465676f72692f4d56502f6741684138756c31343462704a4930782e706e67, '2018-11-27 12:02:28'),
+('95NlCABz', 'JklrJPpY', 'zmbzmwqHmiDHIt0G.jpg', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f6b6f6e74616b2f526f6d692054726973616e64692f7a6d627a6d7771486d694448497430472e6a7067, '2018-11-26 13:01:29'),
+('a37Y6vVj', 'nwPKPHA1', 'mipqGZFILPpzvwck.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f6b617465676f72692f48617463686261636b2f6d697071475a46494c50707a7677636b2e706e67, '2018-11-27 12:01:58'),
+('B5vAUhC9', 'H8H7tWvc', 'xiWRntwvijvGpl6g.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f416c6c204e657720566f78792f786957526e747776696a7647706c36672e706e67, '2018-11-27 12:38:26'),
+('b94ZFIpC', 'Ja5hMpHx', 'f7B8SRNspQPnlBGL.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f546f796f74612038362f6637423853524e737051506e6c42474c2e706e67, '2018-11-27 12:33:06'),
+('dHRa0HMP', 'XgU7JvMV', 'axAuCiIiRYfaTlGB.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f546f796f746120466f7274756e6572205452442f617841754369496952596661546c47422e706e67, '2018-11-27 15:19:53'),
+('dJb62H87', '1ko56qmV', 'lqOKThEXtcJb3B12.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f416c6c204e657720416c7068617264204879627269642f6c714f4b5468455874634a62334231322e706e67, '2018-11-27 12:35:26'),
+('eh36ov9Y', 'IvUYcRHM', 'xmgdAs1yCsmKFCnO.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f4e65772043616d72792f786d67644173317943736d4b46436e4f2e706e67, '2018-11-27 15:24:08'),
+('FTNu7cJb', 'XgU7JvMV', '2LnFcb6WBkKu22Qi.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f546f796f746120466f7274756e6572205452442f324c6e4663623657426b4b75323251692e706e67, '2018-11-27 15:19:53'),
+('GO0CdmsP', 'WTLCKPyC', 'Xlg4LZajNX5QiCa5.jpg', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7370617265706172742f546f796f746120536f6c756e6120e2809320465220537570706f727420417373792f586c67344c5a616a4e583551694361352e6a7067, '2018-11-26 13:31:03'),
+('hkpek3X2', 'qIvgIwVM', 'mqrSAqx3Ongp8i32.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f4e657720546f796f74612059617269732f6d717253417178334f6e6770386933322e706e67, '2018-11-27 12:20:02'),
+('HNqET3z9', 'IvUYcRHM', '5HDnN5QtavVwFMKQ.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f4e65772043616d72792f3548446e4e35517461765677464d4b512e706e67, '2018-11-27 15:24:08'),
+('IX5d6v2X', 'qIvgIwVM', 'HxCE4Q5Vsf0Aa9z3.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f4e657720546f796f74612059617269732f48784345345135567366304161397a332e706e67, '2018-11-27 12:20:02'),
+('jsB7oD4n', 'WTLCKPyC', 'pQy2cKQ8gPXloQNB.jpg', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7370617265706172742f546f796f746120536f6c756e6120e2809320465220537570706f727420417373792f70517932634b51386750586c6f514e422e6a7067, '2018-11-26 13:31:03'),
+('leBXhQjH', 'qIvgIwVM', '4mByGuRrZ6R8hARU.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f4e657720546f796f74612059617269732f346d4279477552725a365238684152552e706e67, '2018-11-27 12:20:02'),
+('lFkIzJeh', '55ntvD7F', 'xNETSiaQY7Z8Lfj5.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f6b617465676f72692f436f6d6d65726369616c2f784e45545369615159375a384c666a352e706e67, '2018-11-27 12:05:06'),
+('ltASBU3Z', 'WTLCKPyC', 'kLBtv9qwtlLeyN2x.jpg', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7370617265706172742f546f796f746120536f6c756e6120e2809320465220537570706f727420417373792f6b4c427476397177746c4c65794e32782e6a7067, '2018-11-26 13:31:03'),
+('LuKjPVxc', 'pzG9hZmE', 'R5zbhkiJl45fsNKu.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f48696c75782044204361622f52357a62686b694a6c343566734e4b752e706e67, '2018-11-27 12:43:45'),
+('mgpfVmv7', 'pzG9hZmE', '6d1yc3FTwSP5LnjU.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f48696c75782044204361622f3664317963334654775350354c6e6a552e706e67, '2018-11-27 12:43:45'),
+('mhCwi0Yw', 'XgU7JvMV', 'WhQyhmLALRm5VIQu.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f546f796f746120466f7274756e6572205452442f57685179686d4c414c526d35564951752e706e67, '2018-11-27 15:19:53'),
+('n9VplVYV', 'qIvgIwVM', 'MKiu0JFQNUVKmmOT.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f4e657720546f796f74612059617269732f4d4b6975304a46514e55564b6d6d4f542e706e67, '2018-11-27 12:20:02'),
+('NfU5FCxR', '1ko56qmV', 'H5XkApMXXRLrQqai.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f416c6c204e657720416c7068617264204879627269642f4835586b41704d5858524c72517161692e706e67, '2018-11-27 12:35:26'),
+('ogWzicwQ', 'qIvgIwVM', 'XudA1ynmvthvAb3Y.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f4e657720546f796f74612059617269732f5875644131796e6d76746876416233592e706e67, '2018-11-27 12:20:02'),
+('pltjZ50h', 'pMpaFg3h', 'PqsfduINTqaOmMBq.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f6b617465676f72692f4879627269642f507173666475494e5471614f6d4d42712e706e67, '2018-11-27 12:02:59'),
+('Qhi3IlZb', 'qIvgIwVM', 'CklzwWnm2FJSiKfD.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f4e657720546f796f74612059617269732f436b6c7a77576e6d32464a53694b66442e706e67, '2018-11-27 12:20:02'),
+('QOqoNONb', 'IvUYcRHM', '48OJAUR2qxLprM9v.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f4e65772043616d72792f34384f4a4155523271784c70724d39762e706e67, '2018-11-27 15:24:08'),
+('R2SANbfT', 'zBqclfAC', 'Nlg0DOidd6OpnCwe.jpg', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f6b617465676f72692f53706f72742f4e6c6730444f696464364f706e4377652e6a7067, '2018-11-26 13:44:31'),
+('rLf1nHeQ', 'pzG9hZmE', 'AHQqzT3oSCS4072s.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f48696c75782044204361622f414851717a54336f53435334303732732e706e67, '2018-11-27 12:43:45'),
+('RP9KzQPH', 'qIvgIwVM', 'AIMugMYKjJcChMA3.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f4e657720546f796f74612059617269732f41494d75674d594b6a4a6343684d41332e706e67, '2018-11-27 12:20:02'),
+('rQs9tP6F', 'Ja5hMpHx', 'QAvKiArVonfq1QeA.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f546f796f74612038362f5141764b694172566f6e6671315165412e706e67, '2018-11-27 12:33:06'),
+('spmjtdAS', 'XgU7JvMV', '998oeEmQ7rXqo626.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f546f796f746120466f7274756e6572205452442f3939386f65456d51377258716f3632362e706e67, '2018-11-27 15:19:53'),
+('T9BwgGag', 'Ja5hMpHx', 'mlrumYYkL3U1ldaA.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f546f796f74612038362f6d6c72756d59596b4c3355316c6461412e706e67, '2018-11-27 12:33:06'),
+('tiKlF357', 'XgU7JvMV', 'N8J34WjHItX5yXOo.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f546f796f746120466f7274756e6572205452442f4e384a3334576a484974583579584f6f2e706e67, '2018-11-27 15:19:53'),
+('TwrOw7QQ', 'G8BLsktj', '1zquKz9gd8mkEog4.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f6b617465676f72692f536564616e2f317a71754b7a396764386d6b456f67342e706e67, '2018-11-27 12:04:25'),
+('uEm98UO1', 'XgU7JvMV', 'O13x22zN6us2yJNY.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f546f796f746120466f7274756e6572205452442f4f31337832327a4e36757332794a4e592e706e67, '2018-11-27 15:19:53'),
+('vRjnZKgU', 'pzG9hZmE', '2B10aogy5byi2uAb.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f48696c75782044204361622f32423130616f677935627969327541622e706e67, '2018-11-27 12:43:45'),
+('WCb98p5u', 'Ja5hMpHx', 'hTMt3osCNoQt5ULR.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f546f796f74612038362f68544d74336f73434e6f517435554c522e706e67, '2018-11-27 12:33:06'),
+('wcfqZZv1', 'H8H7tWvc', '4j6Zl1fM7w1BxJeG.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f416c6c204e657720566f78792f346a365a6c31664d37773142784a65472e706e67, '2018-11-27 12:38:26'),
+('WgdAAHSF', 'IvUYcRHM', 'RtM6t3HQmoYO6q9B.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f4e65772043616d72792f52744d36743348516d6f594f367139422e706e67, '2018-11-27 15:24:08'),
+('xsUySbXI', 'Ja5hMpHx', 'WEdzoxZAlrqTvBjF.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f546f796f74612038362f5745647a6f785a416c72715476426a462e706e67, '2018-11-27 12:33:06'),
+('xWTbNG2g', '1ko56qmV', 'jxKRd3rkl1x075tn.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f416c6c204e657720416c7068617264204879627269642f6a784b526433726b6c3178303735746e2e706e67, '2018-11-27 12:35:26'),
+('yXv9zGgX', 'IvUYcRHM', 'UoiWWw45zdLmmNTp.png', 0x687474703a2f2f6c6f63616c686f73742f70656e6a75616c616e2f66696c652f7365726965732f4e65772043616d72792f556f6957577734357a644c6d6d4e54702e706e67, '2018-11-27 15:24:08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kategori`
+--
+
+CREATE TABLE `kategori` (
+  `kode_kategori` varchar(8) NOT NULL,
+  `nama_kategori` text NOT NULL,
+  `ditambahkan` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kategori`
+--
+
+INSERT INTO `kategori` (`kode_kategori`, `nama_kategori`, `ditambahkan`) VALUES
+('55ntvD7F', 'Commercial', '2018-11-27 12:05:04'),
+('BQJxY0WW', 'SUV', '2018-11-27 12:03:38'),
+('G8BLsktj', 'Sedan', '2018-11-27 12:04:24'),
+('HG6mKE1w', 'MVP', '2018-11-27 12:02:25'),
+('nwPKPHA1', 'Hatchback', '2018-11-27 12:01:56'),
+('pMpaFg3h', 'Hybrid', '2018-11-27 12:02:58'),
+('zBqclfAC', 'Sport', '2018-11-26 13:44:31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kontak`
+--
+
+CREATE TABLE `kontak` (
+  `id_kontak` varchar(8) NOT NULL,
+  `nama_kontak` text NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `no_telp` varchar(15) NOT NULL,
+  `email` text NOT NULL,
+  `akses` varchar(20) NOT NULL,
+  `jabatan` blob NOT NULL,
+  `ditambahkan` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kontak`
+--
+
+INSERT INTO `kontak` (`id_kontak`, `nama_kontak`, `username`, `password`, `no_telp`, `email`, `akses`, `jabatan`, `ditambahkan`) VALUES
+('JklrJPpY', 'Romi Trisandi', 'romi_tri', 'trisandi01', '089676543218', 'romitri90@gmail.com', 'administrator', 0x4d616e61676572, '2018-11-26 13:01:29');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesan`
+--
+
+CREATE TABLE `pesan` (
+  `kode_pesan` varchar(8) NOT NULL,
+  `nama` text NOT NULL,
+  `email` text NOT NULL,
+  `no_telp` varchar(15) NOT NULL,
+  `isi` blob NOT NULL,
+  `ditambahkan` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pesan`
+--
+
+INSERT INTO `pesan` (`kode_pesan`, `nama`, `email`, `no_telp`, `isi`, `ditambahkan`) VALUES
+('1C1e7X3o', 'Ardinal', 'romitri90@gmail.com', '089676543218', 0x6461646164616461, '2018-11-30 07:56:59'),
+('KcLDvSAe', 'Ardinal', 'romitri90@gmail.com', '089676543218', 0x4269736d696c6168, '2018-11-30 07:06:39'),
+('ptlgz5e0', 'Ardinal', 'romitri90@gmail.com', '089676543218', 0x776b776b776b, '2018-11-30 07:06:18'),
+('x3VKLWW5', 'Ardinal', 'romitri90@gmail.com', '089676543218', 0x4f4b20434f59, '2018-11-30 07:06:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `produk`
+--
+
+CREATE TABLE `produk` (
+  `kode_produk` varchar(8) NOT NULL,
+  `nama_produk` text NOT NULL,
+  `kode_series` varchar(8) NOT NULL,
+  `transmisi` varchar(10) NOT NULL,
+  `harga` varchar(15) NOT NULL,
+  `keterangan` text NOT NULL,
+  `ditambahkan` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `produk`
+--
+
+INSERT INTO `produk` (`kode_produk`, `nama_produk`, `kode_series`, `transmisi`, `harga`, `keterangan`, `ditambahkan`) VALUES
+('4VZUjfEz', '4x2 2.7 SRZ A/T BSN TRD', 'XgU7JvMV', 'Automatic', '557850000', 'Overall Panjang 4,795 / Transmisi Otomatis 6 Tingkat Kecepatan / 6 Speed Automatic / Tipe Mesin 2TR-FE 4 Silinder Segaris, 4 Katup, DOHC, Dual VVT-i / 2TR FE 4 Cylinders In-Line, 4 Valve, DOHC, Dual VVT-i', '2018-11-27 15:26:19'),
+('AQVfrPeW', '4x2 2.4 VRZ A/T DSL TRD', 'XgU7JvMV', 'Automatic', '532450000', 'Overall Panjang 4,795 / Transmisi Otomatis 6 Tingkat Kecepatan / 6 Speed Automatic / Tipe Mesin 2GD FTV, 4 Cylinders In-Line, 4 Valve, DOHC, VNT Intercooler', '2018-11-27 15:29:47'),
+('KKZsCZvi', '4x4 2.4 VRZ A/T DSL', 'XgU7JvMV', 'Automatic', '663950000', 'Overall Panjang 4,795 / Transmisi Otomatis 6 Tingkat Kecepatan / 6 Speed Automatic / Tipe Mesin 2 GD FTV 4 Silinder Segaris, 4 Katup, DOHC, VNT Intercooler / 2GD FTV, 4 Cylinders In-Line, 4 Valve, DOHC, VNT Intercooler', '2018-11-27 15:31:12'),
+('mdGUu1Uy', '4x2 2.4 VRZ A/T DSL', 'XgU7JvMV', 'Automatic', '520450000', 'Overall Panjang 4,795 / Transmisi Otomatis 6 Tingkat Kecepatan / 6 Speed Automatic / Tipe Mesin 2 GD FTV 4 Silinder Segaris, 4 Katup, DOHC, VNT Intercooler / 2GD FTV, 4 Cylinders In-Line, 4 Valve, DOHC, VNT Intercooler', '2018-11-27 15:28:11'),
+('MVQD6Hij', 'E Grade CVT', 'qIvgIwVM', 'CVT', '247350000', 'Overall Panjang 4,145 / Transmisi 7-Speed CVT / Tipe Mesin In-line 4 Cyl, 16 Valve, DOHC, Dual VVT-i', '2018-11-27 12:28:26'),
+('Pt93ZbCj', 'E Grade M/T', 'qIvgIwVM', 'Manual', '235550000', 'Overall Panjang 4,145 / Transmisi 5-Speed Manual / Tipe Mesin In-line 4 Cyl, 16 Valve, DOHC, Dual VVT-i', '2018-11-27 12:26:42');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `series`
+--
+
+CREATE TABLE `series` (
+  `kode_series` varchar(8) NOT NULL,
+  `nama_series` text NOT NULL,
+  `kode_kategori` varchar(8) NOT NULL,
+  `warna` text NOT NULL,
+  `ditambahkan` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `series`
+--
+
+INSERT INTO `series` (`kode_series`, `nama_series`, `kode_kategori`, `warna`, `ditambahkan`) VALUES
+('1ko56qmV', 'All New Alphard Hybrid', 'pMpaFg3h', 'Luxury White Pearl Crystal Shine, Silver Metallic, White Pearl MM', '2018-11-27 12:35:25'),
+('H8H7tWvc', 'All New Voxy', 'HG6mKE1w', 'White Pearl, Black, Inazuma Sparkling Black', '2018-11-27 12:38:25'),
+('IvUYcRHM', 'New Camry', 'G8BLsktj', 'White Pearl Crystal Shine, Silver Metallic, Dark Grey Metallic, Dark Brown Metallic, Black Mica, Blue Mica Metallic', '2018-11-27 15:24:05'),
+('Ja5hMpHx', 'Toyota 86', 'zBqclfAC', 'Crystal Black Silica, Pure Red, Dark Grey Metallic, Crystal White Pearl, Ice Silver Metallic, Lapis Blue Pearl', '2018-11-27 12:33:03'),
+('pzG9hZmE', 'Hilux D Cab', '55ntvD7F', 'Silver Metallic, Crimson Red, Attitude Black, Super White, Dark Grey Metallic', '2018-11-27 12:43:43'),
+('qIvgIwVM', 'New Toyota Yaris', 'nwPKPHA1', 'Citrus Mica Metallic, Silver Metallic, Gray Metallic, Red Mica Metallic, Orange Metallic, Super White, Attitude Black Mica', '2018-11-27 12:19:59'),
+('XgU7JvMV', 'Toyota Fortuner TRD', 'BQJxY0WW', 'SUPER WHITE, ATTITUDE BLACK, AVANT-GARDE BRONZE METALLIC, PHANTOM BROWN METALLIC, DARK GRAY MICA METALLIC, SILVER METALLIC', '2018-11-27 15:19:50');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `suku_cadang`
+--
+
+CREATE TABLE `suku_cadang` (
+  `kode_sc` varchar(8) NOT NULL,
+  `nama_sc` text NOT NULL,
+  `harga` varchar(15) NOT NULL,
+  `keterangan` text,
+  `ditambahkan` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `suku_cadang`
+--
+
+INSERT INTO `suku_cadang` (`kode_sc`, `nama_sc`, `harga`, `keterangan`, `ditambahkan`) VALUES
+('WTLCKPyC', 'Toyota Soluna – FR Support Assy', '716850000', 'vbvgf', '2018-11-26 13:38:39');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ulasan`
+--
+
+CREATE TABLE `ulasan` (
+  `kode_ulasan` varchar(8) NOT NULL,
+  `nama` text NOT NULL,
+  `email` text NOT NULL,
+  `id_kontak` varchar(8) NOT NULL,
+  `rating` int(1) NOT NULL,
+  `deskripsi` blob NOT NULL,
+  `ditambahkan` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ulasan`
+--
+
+INSERT INTO `ulasan` (`kode_ulasan`, `nama`, `email`, `id_kontak`, `rating`, `deskripsi`, `ditambahkan`) VALUES
+('E6mcrbq4', 'Ardinal', 'ardinal99@gmail.com', 'JklrJPpY', 5, 0x506573616e206d6f62696c20546f796f7461204176616e7a6120646172692062616e6720526f6d692c20756461682064696b61736968206861726761206d757261682c2064617065742067616e74756e67616e206b756e6369206265726c69616e2e20574f5721212120506f6b6f6b6e7961206d61682e, '2018-12-03 17:55:57');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `bengkel`
+--
+ALTER TABLE `bengkel`
+  ADD PRIMARY KEY (`kode_bengkel`);
+
+--
+-- Indexes for table `file`
+--
+ALTER TABLE `file`
+  ADD PRIMARY KEY (`kode_file`);
+
+--
+-- Indexes for table `kategori`
+--
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`kode_kategori`);
+
+--
+-- Indexes for table `kontak`
+--
+ALTER TABLE `kontak`
+  ADD PRIMARY KEY (`id_kontak`);
+
+--
+-- Indexes for table `pesan`
+--
+ALTER TABLE `pesan`
+  ADD PRIMARY KEY (`kode_pesan`);
+
+--
+-- Indexes for table `produk`
+--
+ALTER TABLE `produk`
+  ADD PRIMARY KEY (`kode_produk`);
+
+--
+-- Indexes for table `series`
+--
+ALTER TABLE `series`
+  ADD PRIMARY KEY (`kode_series`);
+
+--
+-- Indexes for table `suku_cadang`
+--
+ALTER TABLE `suku_cadang`
+  ADD PRIMARY KEY (`kode_sc`);
+
+--
+-- Indexes for table `ulasan`
+--
+ALTER TABLE `ulasan`
+  ADD PRIMARY KEY (`kode_ulasan`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

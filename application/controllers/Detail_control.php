@@ -46,6 +46,14 @@ class Detail_control extends CI_Controller {
 
 	public function kontak() {
 		$data['kontak'] = $this->crud_model->_all_kontak();
+		$data['ulasan'] = $this->crud_model->_all_ulasan();
 		$this->access->pages_normal('pages/kontak', $data);
+	}
+
+	public function kategori($index) {
+		$key_series			= array('kategori.nama_kategori' => $index);
+		$data['kategori']	= $index;
+		$data['series'] 	= $this->crud_model->_all_series($key_series);
+		$this->access->pages_normal('pages/kategori', $data);
 	}
 }

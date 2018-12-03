@@ -43,4 +43,9 @@ class Home_control extends CI_Controller {
 			redirect('home_control/login', 'location', 303);
 		}
 	}
+
+	public function logout() {
+		$this->access->end_session();
+		redirect(base_url(), 'location', 303);
+	}
 }

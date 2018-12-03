@@ -94,18 +94,35 @@
 						<li class="nav-item othlink">
 							<a class="nav-link" href="<?php echo site_url('kontak/');?>">Kontak</a>
 						</li>
+					<?php
+						if (empty($session)) {
+							$person = array(
+								'status' 	=> 'unlog',
+								'link' 		=> site_url('home_control/login/'),
+								'html' 		=> 'Login'
+							);
+						} 
+						else {
+							$person = array(
+								'status' 	=> 'logged',
+								'link' 		=> site_url($session['akses'].'/kontak/'),
+								'html' 		=> 'Menu'
+							);
+						}
+					?>
+
 						<li class="nav-item othlink">
-						<?php
-							if (empty($session)) {
-								$link = site_url('home_control/login/');
-								echo '<a href="'.$link.'" class="nav-link">Login</a>';
-							} 
-							else {
-								$link = site_url($session['akses'].'/kontak/');
-								echo '<a class="nav-link" href="'.$link.'">Menu</a>';
-							}
-						?>
+							<a class="nav-link" href="<?php echo $person['link']; ?>"><?php echo $person['html'];?></a>
 						</li>
+
+					<?php if (! empty($session)) { ?>
+						
+						<li class="nav-item othlink">
+							<a class="nav-link" href="<?php echo site_url('home_control/logout'); ?>">Logout</a>
+						</li>						
+
+					<?php } ?>
+					
 					</ul>
 				</div>
 			</div>

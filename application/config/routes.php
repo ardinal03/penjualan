@@ -6,6 +6,12 @@ $route['sparepart/(:any)']						= 'detail_control/sparepart/$1/';
 $route['sparepart']								= 'detail_control/sparepart/';
 $route['service']								= 'detail_control/service/';
 $route['kontak']								= 'detail_control/kontak/';
+$route['kategori/(:any)']						= 'detail_control/kategori/$1/';
+
+$route['administrator/ulasan']					= 'ulasan_control/admin_ulasan/';
+
+$route['administrator/pesan/(:any)']			= 'pesan_control/admin_pesan/$1/';
+$route['administrator/pesan']					= 'pesan_control/admin_pesan/';
 
 $route['administrator/service/edit/(:any)']		= 'service_control/edit_service/$1/';
 $route['administrator/service']					= 'service_control/admin_service/';

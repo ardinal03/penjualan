@@ -23,6 +23,12 @@
  				<li class="nav-item">
  					<a class="nav-link" href="<?php echo site_url($session['akses'].'/service/'); ?>">Service</a>	
  				</li>
+ 				<li class="nav-item">
+ 					<a class="nav-link" href="<?php echo site_url($session['akses'].'/pesan/'); ?>">Kotak Masuk</a>	
+ 				</li>
+ 				<li class="nav-item">
+ 					<a class="nav-link" href="<?php echo site_url($session['akses'].'/ulasan/'); ?>">Ulasan</a>	
+ 				</li>
  			</ul>
  		</div>
 	</section>

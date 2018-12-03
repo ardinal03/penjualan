@@ -136,4 +136,55 @@ $(document).ready(function() {
 		$(this).hide();
 		$('#toggle-password').show();
 	});
+
+	$( '#stars li' ).on( 'mouseover', function() {
+		var onStar = parseInt( $( this ).data( 'value' ), 10 );
+		$( this ).parent().children( 'li.star' ).each( function( e ) {
+			if ( e < onStar ) {
+				$( this ).addClass( 'hover' );
+
+			}
+			else {
+				$( this ).removeClass( 'hover' );
+			}
+		});
+	})
+	.on( 'mouseout' , function() {
+		$( this ).parent().children( 'li.star' ).each( function( e ) {
+			$( this ).removeClass( 'hover' );
+		});
+	});
+
+	$( '#stars li' ).on( 'click' , function() {
+		var onStar 	= parseInt( $( this ).data( 'value' ), 10 );
+		var stars 	= $( this ).parent().children( 'li.star' );
+		
+		for ( i = 0; i < stars.length; i++ ) {
+			$( stars[i] ).removeClass( 'selected' );
+		}
+
+		for ( i = 0; i < onStar; i++ ) {
+			$( stars[i] ).addClass( 'selected' );
+		}
+
+		var ratingValue = parseInt( $( '#stars li.selected' ).last().data( 'value' ), 10 );
+		
+		$( '.rating-value' ).attr( 'value', ratingValue );
+		$( '.rating-error' ).slideUp('fast');
+	});
+
+	$( '#user_confirm' ).click( function(e) {
+		if ( $( '.rating-value' ).attr( 'value' ) == '') {
+			e.preventDefault();
+			$( '.rating-error' ).show();
+			$( '.rating-block' ).attr("tabindex",-1).focus();
+		}
+	});
+
+	$( '#user_cancel' ).click( function(e) {
+		e.preventDefault();
+		$( '.rating-value' ).attr( 'value', '' );
+		$( '.rating-block' ).attr("tabindex",-1).focus();
+		$( '#stars li' ).removeClass( 'selected' );
+	});
 });

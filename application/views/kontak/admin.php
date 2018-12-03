@@ -39,8 +39,8 @@
 									<p class="card-text text-center"><?php echo $data['email'];?></p>
 								</div>
 								<div class="card-section">
-									<p class="card-subtitle text-center p-2">Keterangan</p>
-									<p class="card-text text-center"><?php echo $data['keterangan'];?></p>
+									<p class="card-subtitle text-center p-2">Jabatan</p>
+									<p class="card-text text-center"><?php echo $data['jabatan'];?></p>
 								</div>
 								<div class="card-menu dropdown">
 									<button type="button" class="btn toggle-card-menu" id="dropdown-card" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -100,11 +100,11 @@
 									</div>
 									<div class="form-group">
 										<label for="email" class="col-form-label">E-mail</label>
-										<input type="text" name="email" class="form-control" required>
+										<input type="email" name="email" class="form-control" required>
 									</div>
 									<div class="form-group">
-										<label for="keterangan" class="col-form-label">Keterangan</label>
-										<textarea cols="54" rows="3" name="keterangan" class="form-control"></textarea>
+										<label for="jabatan" class="col-form-label">Jabatan</label>
+										<input type="text" name="jabatan" class="form-control" required>
 									</div>
 									<hr>
 									<div class="text-center">

@@ -659,3 +659,120 @@ a:hover {
 	text-transform: capitalize;
 	letter-spacing: 1.2px;
 }
+
+.kontak-wrap {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	border: 1px solid #eef1f5;
+	border-radius: 5px;
+}
+
+.bg-kontak {
+	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+
+.kontak-img {
+	max-height: 200px;
+	width: 100%;
+	display: flex;
+	padding: .5rem;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.kontak-img img {
+	margin-top: auto;
+	margin-bottom: auto;
+	vertical-align: middle;
+}
+
+.kontak-desc {
+	width: 100%;
+	height: 100%;
+	display: block;
+	background-color: #fff;
+	padding: 2rem;
+	display: flex;
+}
+
+.kontak-pos {
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 100%;
+}
+
+.kontak-section {
+	margin: 8px 0;
+}
+
+.kontak-form {
+	padding: 0 1rem;
+	background-color: #fff;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	border-radius: 1rem;
+}
+
+.rating-block {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.rating-block ul {
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 0;
+	text-align: right;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.rating-block ul > li.star {
+	display: inline-block;
+	cursor: pointer; 
+}
+
+.rating-block ul > li.star > i.fa {
+	color: #ccc;
+}
+
+.rating-block ul > li.star.selected > i.fa {
+	color:#FF912C;
+}
+
+i.small-star {
+	font-size: 16px;
+}
+
+i.medium-star {
+	font-size: 24px;
+}
+
+i.big-star {
+	font-size: 32px;
+}
+
+.rating-block ul > li.star.hover > i.fa {
+	color: #FFCC36;
+}
+
+.rating-block ul > li.star.selected > i.fa {
+	color:#FF912C;
+}
+
+.rating-disabled {
+	cursor: default;
+	pointer-events: none;
+}
+
+.rating-error {
+	font-size: 14px;
+	font-weight: 600;
+	color: #dc3545;
+	font-style: italic;
+	margin-left: 10px;
+	margin-top: auto;
+	margin-bottom: auto;
+	transition: all ease 1s;
+}
