@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2018 at 06:56 PM
+-- Generation Time: Dec 09, 2018 at 10:07 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -178,16 +178,6 @@ CREATE TABLE `pesan` (
   `isi` blob NOT NULL,
   `ditambahkan` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pesan`
---
-
-INSERT INTO `pesan` (`kode_pesan`, `nama`, `email`, `no_telp`, `isi`, `ditambahkan`) VALUES
-('1C1e7X3o', 'Ardinal', 'romitri90@gmail.com', '089676543218', 0x6461646164616461, '2018-11-30 07:56:59'),
-('KcLDvSAe', 'Ardinal', 'romitri90@gmail.com', '089676543218', 0x4269736d696c6168, '2018-11-30 07:06:39'),
-('ptlgz5e0', 'Ardinal', 'romitri90@gmail.com', '089676543218', 0x776b776b776b, '2018-11-30 07:06:18'),
-('x3VKLWW5', 'Ardinal', 'romitri90@gmail.com', '089676543218', 0x4f4b20434f59, '2018-11-30 07:06:00');
 
 -- --------------------------------------------------------
 
