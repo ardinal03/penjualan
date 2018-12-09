@@ -6,11 +6,6 @@ class Pesan_control extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->library(array('crypto','photo'));
-
-		$session = $this->access->session_data();
-		if (empty($session['name'])) {
-			redirect('home_control/login/', 'location', 303);
-		}
 	}
 /**
 |--------------------------------------------------------
@@ -20,7 +15,10 @@ class Pesan_control extends CI_Controller {
  */
 	public function admin_pesan($index = NULL) {
 		$data['session'] 	= $this->access->session_data();
-		
+		if (empty($data['session'])) {
+			redirect('home_control/login/', 'location', 303);
+		}
+
 		if (!empty($index)) {
 			$key_pesan 			= array('pesan.kode_pesan' => $index);
 			$data['pesan'] 		= $this->crud_model->_select_pesan($key_pesan);

@@ -3,7 +3,7 @@
 		<div class="main-canvas">
 			<?php echo $this->session->flashdata('msg'); ?>
 			<div class="col-12 header-block mb-2">
-				<h1 class="display-6 mr-auto">Kotak Masuk</h1>
+				<h1 class="display-6 mr-auto">Ulasan</h1>
 			</div>
 		</div>
 	</section>

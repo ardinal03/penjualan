@@ -6,11 +6,6 @@ class Ulasan_control extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->library(array('crypto','photo'));
-
-		$session = $this->access->session_data();
-		if (empty($session['name'])) {
-			redirect('home_control/login/', 'location', 303);
-		}
 	}
 /**
 |--------------------------------------------------------
@@ -20,6 +15,11 @@ class Ulasan_control extends CI_Controller {
  */
 	public function admin_ulasan() {
 		$data['session'] 	= $this->access->session_data();
+		
+		if (empty($data['session'])) {
+			redirect('home_control/login/', 'location', 303);
+		}
+		
 		$data['ulasan'] 	= $this->crud_model->_all_ulasan();
 
 		$this->access->pages_admin('pesan/ulasan', $data);
@@ -89,7 +89,7 @@ class Ulasan_control extends CI_Controller {
 		if ($delete_ulasan == TRUE) {
 			$alert = array(
 				'type'		=> 'success',
-				'message' 	=> 'pesan berhasil dihapus'
+				'message' 	=> 'Ulasan berhasil dihapus'
 			);
 		
 			$this->alert->gen_alert($alert);
@@ -98,7 +98,7 @@ class Ulasan_control extends CI_Controller {
 		else {
 			$alert = array(
 				'type'		=> 'danger',
-				'message' 	=> 'pesan gagal dihapus'
+				'message' 	=> 'Ulasan gagal dihapus'
 			);
 			$this->alert->gen_alert($alert);
 			redirect($admin.'/ulasan/', 'location', 303);
